@@ -1,0 +1,19 @@
+<taglib>
+  <tlib-version>1.0</tlib-version>
+  <jsp-version>2.0</jsp-version>
+  <short-name>The Try Tag</short-name>
+  <tag>
+    <name>generate</name>
+    <tag-class>com.exigenservices.lectures.GenerateTag</tag-class>
+    <body-content>scriptless</body-content>
+    <attribute>
+      <name>number</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>guess</name>
+      <tag-class>com.exigenservices.lectures.GuessTag</tag-class>
+      <body-content>scriptless</body-content>
+  </tag>
+</taglib>
