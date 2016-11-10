@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="hw004-ear:ear exploded">
+    <output-path>$PROJECT_DIR$/hw004-ear/target/hw004-ear-1.0-SNAPSHOT</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="hw004-ear/javaeeApplication/JavaEE" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/hw004-ear/target/hw004-ear-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="archive" name="hw004-ejb-1.0-SNAPSHOT.jar">
+        <element id="artifact" artifact-name="hw004-ejb:ejb exploded" />
+      </element>
+      <element id="archive" name="hw004-jsp-1.0-SNAPSHOT.war">
+        <element id="artifact" artifact-name="hw004-jsp:war exploded" />
+      </element>
+    </root>
+  </artifact>
+</component>
