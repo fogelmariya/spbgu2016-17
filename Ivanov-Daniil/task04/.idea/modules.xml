@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HW004.iml" filepath="$PROJECT_DIR$/HW004.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hw004-ear/hw004-ear.iml" filepath="$PROJECT_DIR$/hw004-ear/hw004-ear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hw004-ejb/hw004-ejb.iml" filepath="$PROJECT_DIR$/hw004-ejb/hw004-ejb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hw004-jsp/hw004-jsp.iml" filepath="$PROJECT_DIR$/hw004-jsp/hw004-jsp.iml" />
+    </modules>
+  </component>
+</project>
