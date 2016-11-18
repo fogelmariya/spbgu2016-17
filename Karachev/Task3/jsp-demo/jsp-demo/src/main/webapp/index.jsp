@@ -6,6 +6,9 @@
 
 
 <html>
+
+
+
     <style>
 
         #base {
@@ -20,7 +23,8 @@
     <body id=base bgcolor="#F0F8FF">
 
 
-        <h1 id=citty>Guess the number from 1 to 100!</h1>
+
+        <h1>Guess the number from 1 to 100!</h1>
 
         <form action="index.jsp" method="get">
                     <p>Enter the number</p>
@@ -41,11 +45,13 @@
                     if(first){%>
                      ${util:setVictory(false)}
                      ${util:setLose(true)}
+                     <c:set scope="session" var="sessionStarted" value="true"/>
                      <c:redirect url="/victory.jsp"/>
                      <%}
                      else {%>
                                  ${util:setVictory(true)}
                                  ${util:setLose(false)}
+                                 <c:set scope="session" var="sessionStarted" value="true"/>
                                  <c:redirect url="/lose.jsp"/>
                      <%}
                     out.println(first);
