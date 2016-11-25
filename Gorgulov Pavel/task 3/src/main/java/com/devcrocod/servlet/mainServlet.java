@@ -1,66 +1,49 @@
 package com.devcrocod.servlet;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/")
+//@WebServlet("start.jsp")
 public class mainServlet extends HttpServlet {
 
-    private final static String ACTION_START = "start";
-
-    private static boolean aBoolean;
+    private final static String ACTION = "start";
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse res)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        req.getRequestDispatcher("start.jsp").forward(req, res);
+        int count = Integer.parseInt(request.getParameter("count"));
+        int res = riddle();
+        String action = request.getParameter("action");
 
-        if (aBoolean)
-            redirectWin(req, res);
-        else
-            redirectLose(req, res);
 
-//        req.setAttribute("name", "Devcrocod");
-//
-//        req.getRequestDispatcher("mypage.jsp").forward(req, res);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse res)
-            throws ServletException, IOException {
-
-        String action = req.getParameter("action");
-
-        String s = req.getParameter("count");
-
-        int count = Integer.parseInt(s);
-
-        result(count, action);
-//        if (ACTION_START.equals(action)) {
-//            if (count == riddle()) {
-//                redirectWin(req, res);
-//            } else {
-//                redirectLose(req, res);
-//            }
-//        }
-//        String count = req.getParameter("name");
-
-//        String value = req.getParameter(name);
-
-    }
-
-    private void result(int count, String action) {
-        if (ACTION_START.equals(action)) {
-            if (count == riddle()) {
-                aBoolean = true;
+        if (ACTION.equals(action)) {
+            if (count == res) {
+                redirectWin(request, response);
             } else {
-                aBoolean = false;
+                redirectLose(request, response);
+            }
+        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        int count = Integer.parseInt(request.getParameter("count"));
+        int res = riddle();
+        String action = request.getParameter("action");
+
+
+        if (ACTION.equals(action)) {
+            if (count == res) {
+                redirectWin(request, response);
+            } else {
+                redirectLose(request, response);
             }
         }
     }
@@ -68,6 +51,7 @@ public class mainServlet extends HttpServlet {
     private int riddle() {
         return (int) (Math.random() * 100);
     }
+
 
     private void redirectWin(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
